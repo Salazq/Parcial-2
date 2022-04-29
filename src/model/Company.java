@@ -75,7 +75,13 @@ public class Company{
         double prom=0;
         int div=0;
 
-        
+        for (int i = 0; i < MAX_BATTERIES; i++) {
+            if (batteries[i] != null &&  batteries[i] instanceof RechargeableBattery) {
+
+                sum+= ((RechargeableBattery) batteries[i]).calculateUsefulLifeCost();
+                div++;
+            }
+        }
 
         prom=sum/div;
 
